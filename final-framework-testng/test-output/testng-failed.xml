@@ -7,7 +7,6 @@
         <methods>
           <include name="tearDown"/>
           <include name="checkaddedUserfromSearch"/>
-          <include name="checkDisplayedMsgafterSubmit"/>
           <include name="setUpBeforeClass"/>
         </methods>
       </class> <!-- com.training.functional.tests.AddNewUserTest -->

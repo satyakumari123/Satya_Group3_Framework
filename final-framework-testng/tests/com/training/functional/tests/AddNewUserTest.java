@@ -52,11 +52,11 @@ public class AddNewUserTest {
 	  }  
 	@Test(priority=2)//for every sucessful run we have to change firstname,lastname and user name
 	public void clickAddNewUserOnAdministration() throws InterruptedException {
-		addaUserPOM.sendUserfirstname("LMK3");	
+		addaUserPOM.sendUserfirstname("LMK4");	
 		addaUserPOM.sendUserlastname("KML");
 		addaUserPOM.sendUseremail("satyaashu@gmail.com");
 		addaUserPOM.sendUserphoneNo("8552971341");
-		addaUserPOM.sendUserName("LMKKML3");
+		addaUserPOM.sendUserName("LMKKML4");
 		addaUserPOM.sendUserPassword("satyaashu5");		
 		//Actions action=new Actions(driver);
 		//addaUserPOM.profileOptionsDropdownFrom();//by default value
@@ -85,11 +85,11 @@ public class AddNewUserTest {
 		}
 	@Test(priority=4)//for every successful run we need change searchbox content
 	public void checkaddedUserfromSearch() throws InterruptedException {
-		addaUserPOM.sendSearchTextBox("LMKKML3"); //need to change this as username for every run
+		addaUserPOM.sendSearchTextBox("LMKKML4"); //need to change this as username for every run
 		addaUserPOM.clicksearchBtn();
 		Thread.sleep(3000);
 		String Actual1 =addaUserPOM.sendSearchTextBox();
-		String Expected1="LMKKML3"; //need to change this value for every run
+		String Expected1="LMKKML4"; //need to change this value for every run
 		assertEquals(Actual1,Expected1);//check login from user list same as added
 		
 	}
