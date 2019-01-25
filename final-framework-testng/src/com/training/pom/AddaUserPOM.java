@@ -54,7 +54,8 @@ public class AddaUserPOM {
 	@FindBy(id="search_simple_submit")
 	private WebElement searchsubmitBtn;
 	
-	@FindBy(xpath="//td[contains(text(),'efghij')]")
+	//@FindBy(xpath="//td[contains(text(),'efghij')]")
+	@FindBy(xpath="//tr[2]//td[6]")// we have used 1st row 6th column value
 	private WebElement searchResultDisplay;
 	
 	//other way //-//tr[3]//td[3]
