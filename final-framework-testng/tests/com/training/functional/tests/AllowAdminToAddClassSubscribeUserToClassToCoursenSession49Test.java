@@ -161,6 +161,7 @@ public class AllowAdminToAddClassSubscribeUserToClassToCoursenSession49Test {
 	  Actual=afterSubscribeClassToCoursesPOM.AlertmsgAfterClassToCoursesAdded();
 	  boolean labelmsg=Actual.contains(Expected);
 	  assertTrue(labelmsg);
+	  Thread.sleep(3000);
 	  
 	  }
   @Test(priority=13,enabled=true)

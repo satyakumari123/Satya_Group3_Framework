@@ -89,14 +89,14 @@ public class AllowAdminToCreateCategorynCourse_47Test {
 	  assertTrue(categorymatch);
 	  //assertEquals(Actual,Expected);
 	  }
-	/*@Test(priority=7,enabled=true)
+	@Test(priority=7,enabled=true)
 	  public void ClickAdministrationLink() throws InterruptedException {
 		addCategoryPOM.AdministrationLinkClick();
 		Thread.sleep(2000);
 
-	  }*/
+	  }
 	  
-	/*  @Test(priority=8,enabled=true)
+	  @Test(priority=8,enabled=true)
 	  public void CreateaCourseLink() throws InterruptedException {
 		administrationPOM.clickcreateaCoursesLink();
 		Thread.sleep(3000);
@@ -137,7 +137,7 @@ public class AllowAdminToCreateCategorynCourse_47Test {
 		  Expected="Phython2";//everytime need to change
 		  boolean checkcourseinlist=Actual.contains(Expected);
 		  assertTrue(checkcourseinlist);
-	  }*/
+	  }
 	   
 
   

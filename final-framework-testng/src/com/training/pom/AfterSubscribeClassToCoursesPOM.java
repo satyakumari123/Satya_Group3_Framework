@@ -14,8 +14,9 @@ public class AfterSubscribeClassToCoursesPOM {
 	@FindBy(xpath="//div[@class='alert alert-info']")
 	private WebElement AlertmsgAfterClassToCourses;
 	
-	@FindBy(xpath="//tr[2]//td[3]")// how to find dynamic //no of courses ??
-	private WebElement NoOfCourses;
+	//@FindBy(xpath="//tr[2]//td[3]")
+	@FindBy(xpath="//td[@title='1'and @aria-describedby='usergroups_courses']")//// Taken dynamic row then checked no. of courses 
+	private WebElement NoOfCourses; //for no of courses
 
 	public String AlertmsgAfterClassToCoursesAdded() {
 		return this.AlertmsgAfterClassToCourses.getText();

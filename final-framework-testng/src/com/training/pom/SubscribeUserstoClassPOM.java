@@ -24,7 +24,7 @@ public class SubscribeUserstoClassPOM {
     @FindBy(xpath="//button[contains(text(),'Subscribe users to class')]")
 	private WebElement SubscribeUserstoClassBtn;
     
-    @FindBy(xpath="//td[@title='1']")
+    @FindBy(xpath="//td[@title='1'and @aria-describedby='usergroups_users']")//for no of users
 	private WebElement SubscribeUsersNum;
     
 
