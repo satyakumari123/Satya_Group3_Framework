@@ -8,9 +8,11 @@ import org.openqa.selenium.support.ui.Select;
 
 public class AddaUserPOM {
 	private WebDriver driver;
+	//public String frstname ,lstname;//-to validate full name
 	public AddaUserPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
+		
 		}
 	@FindBy(id="firstname")
 	private WebElement firstname;
@@ -64,10 +66,16 @@ public class AddaUserPOM {
 	public void sendUserfirstname(String firstname) {
 		this.firstname.clear();
 		this.firstname.sendKeys(firstname);
+		//frstname=this.firstname.getAttribute("value");//added this line to get full name>>>>>>>
 	}
 	public void sendUserlastname(String lastname) {
 		this.lastname.clear();
 		this.lastname.sendKeys(lastname);
+		//lstname=this.lastname.getAttribute("value");//added this line to get full name>>>>>>>>>
+	}
+	public void sendUserofficialcode(String official_code) {
+		this.official_code.clear();
+		this.official_code.sendKeys(official_code);
 	}
 	public void sendUseremail(String email) {
 		this.email.clear();
@@ -104,7 +112,10 @@ public class AddaUserPOM {
 		this.submitBtn.submit(); 
 	}
 	public String ViewInfoAfterSubLabel() {
-		return this.InfoAfterSubmit.getText(); 
+		
+		return this.InfoAfterSubmit.getText();//for full name displayed we can write below code as well by splitting content>>>>>>>>>>>
+	//String fullname=this.InfoAfterSubmit.getText();//+frstname+lstname;//for full name displayed>>>>>>>>>>>
+		//return fullname;
 	}
 	
 	public void sendSearchTextBox(String SearchTextBox) {

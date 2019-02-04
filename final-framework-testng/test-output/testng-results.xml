@@ -1,41 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="118445" started-at="2019-01-25T11:04:17Z" finished-at="2019-01-25T11:06:16Z">
+  <suite name="Default suite" duration-ms="34715" started-at="2019-02-04T11:36:17Z" finished-at="2019-02-04T11:36:52Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="118445" started-at="2019-01-25T11:04:17Z" finished-at="2019-01-25T11:06:16Z">
-      <class name="com.training.functional.tests.AddNewUserTest">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.AddNewUserTest@6f7fd0e6]" name="setUpBeforeClass" is-config="true" duration-ms="65372" started-at="2019-01-25T11:04:17Z" finished-at="2019-01-25T11:05:23Z">
+    <test name="Default test" duration-ms="34715" started-at="2019-02-04T11:36:17Z" finished-at="2019-02-04T11:36:52Z">
+      <class name="com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="setUpBeforeClass" is-config="true" duration-ms="9100" started-at="2019-02-04T11:36:17Z" finished-at="2019-02-04T11:36:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="loginProfileAdmin()[pri:0, instance:com.training.functional.tests.AddNewUserTest@6f7fd0e6]" name="loginProfileAdmin" duration-ms="15462" started-at="2019-01-25T11:05:23Z" finished-at="2019-01-25T11:05:38Z">
+        <test-method status="PASS" signature="loginProfileAdmin()[pri:0, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="loginProfileAdmin" duration-ms="6506" started-at="2019-02-04T11:36:26Z" finished-at="2019-02-04T11:36:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginProfileAdmin -->
-        <test-method status="PASS" signature="clickAddnewUserLinkOnAdministration()[pri:1, instance:com.training.functional.tests.AddNewUserTest@6f7fd0e6]" name="clickAddnewUserLinkOnAdministration" duration-ms="11068" started-at="2019-01-25T11:05:38Z" finished-at="2019-01-25T11:05:49Z">
+        <test-method status="PASS" signature="CategoryCourse()[pri:1, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="CategoryCourse" duration-ms="1523" started-at="2019-02-04T11:36:32Z" finished-at="2019-02-04T11:36:34Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickAddnewUserLinkOnAdministration -->
-        <test-method status="PASS" signature="clickAddNewUserOnAdministration()[pri:2, instance:com.training.functional.tests.AddNewUserTest@6f7fd0e6]" name="clickAddNewUserOnAdministration" duration-ms="18231" started-at="2019-01-25T11:05:49Z" finished-at="2019-01-25T11:06:07Z">
+        </test-method> <!-- CategoryCourse -->
+        <test-method status="PASS" signature="CategoryCourseImage()[pri:2, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="CategoryCourseImage" duration-ms="1082" started-at="2019-02-04T11:36:34Z" finished-at="2019-02-04T11:36:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickAddNewUserOnAdministration -->
-        <test-method status="PASS" signature="checkDisplayedMsgafterSubmit()[pri:3, instance:com.training.functional.tests.AddNewUserTest@6f7fd0e6]" name="checkDisplayedMsgafterSubmit" duration-ms="64" started-at="2019-01-25T11:06:07Z" finished-at="2019-01-25T11:06:08Z">
+        </test-method> <!-- CategoryCourseImage -->
+        <test-method status="PASS" signature="AddCategory()[pri:3, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="AddCategory" duration-ms="1565" started-at="2019-02-04T11:36:35Z" finished-at="2019-02-04T11:36:37Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkDisplayedMsgafterSubmit -->
-        <test-method status="PASS" signature="checkaddedUserfromSearch()[pri:4, instance:com.training.functional.tests.AddNewUserTest@6f7fd0e6]" name="checkaddedUserfromSearch" duration-ms="4490" started-at="2019-01-25T11:06:08Z" finished-at="2019-01-25T11:06:12Z">
+        </test-method> <!-- AddCategory -->
+        <test-method status="PASS" signature="CreatedCategorySubmit()[pri:4, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="CreatedCategorySubmit" duration-ms="4830" started-at="2019-02-04T11:36:37Z" finished-at="2019-02-04T11:36:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkaddedUserfromSearch -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.AddNewUserTest@6f7fd0e6]" name="tearDown" is-config="true" duration-ms="3721" started-at="2019-01-25T11:06:12Z" finished-at="2019-01-25T11:06:16Z">
+        </test-method> <!-- CreatedCategorySubmit -->
+        <test-method status="PASS" signature="ClickAdministrationLinkthenCourseCategoryLink()[pri:5, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="ClickAdministrationLinkthenCourseCategoryLink" duration-ms="6167" started-at="2019-02-04T11:36:41Z" finished-at="2019-02-04T11:36:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickAdministrationLinkthenCourseCategoryLink -->
+        <test-method status="PASS" signature="NemeofAddedCategoryDisplayedinCoursescategories()[pri:6, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="NemeofAddedCategoryDisplayedinCoursescategories" duration-ms="68" started-at="2019-02-04T11:36:48Z" finished-at="2019-02-04T11:36:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NemeofAddedCategoryDisplayedinCoursescategories -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="tearDown" is-config="true" duration-ms="3830" started-at="2019-02-04T11:36:48Z" finished-at="2019-02-04T11:36:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.functional.tests.AddNewUserTest -->
+      </class> <!-- com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -49,17 +49,17 @@ public class RegistrationTests {
   public void RegisterHomeTest() throws InterruptedException {
 	  	
 	  Thread.sleep(3000);
-	  registrationPOM.sendregistration_firstname("SatyaT");
-	  registrationPOM.sendregistration_lastname("KumariT");
+	  registrationPOM.sendregistration_firstname("SatyaS");
+	  registrationPOM.sendregistration_lastname("KumariS");
 	  registrationPOM.sendRegistration_email("satyakumari@gmail.com");
 	  registrationPOM.sendRegistration_official_code("12345");
-	  registrationPOM.senduserName("SatyaTU");
+	  registrationPOM.senduserName("SatyaSU");
 	  registrationPOM.sendPassword("satyaashu5");
 	  registrationPOM.sendconfirmPassword("satyaashu5");
 	  registrationPOM.sendregistration_phone("7722032874");
 	  Thread.sleep(3000);
-	  registrationPOM.clickTeacherRBtn();//unable to select teacher radio button
-	  Thread.sleep(2000);
+	 // registrationPOM.clickTeacherRBtn();//unable to select teacher radio button
+	 // Thread.sleep(2000);
 	  screenShot.captureScreenShot("RegistrationTest");
 	  registrationPOM.clickregistration_submitBtn();
 	 	
