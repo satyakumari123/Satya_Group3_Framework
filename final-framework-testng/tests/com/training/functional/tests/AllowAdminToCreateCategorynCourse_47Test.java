@@ -14,11 +14,20 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+/* Author : Satya Kumari
+ * TC ID  : ELTC_047
+ * TC Description :TO verify whether application allows admin to create a category & course on the category
+ * Pre-condition : 1. User should have launched the application
+
+                   2. User should get logged in as admin
+ */
 
 public class AllowAdminToCreateCategorynCourse_47Test {
 	private static WebDriver driver;
@@ -40,7 +49,7 @@ public class AllowAdminToCreateCategorynCourse_47Test {
 		    loginPOM.sendUserName("admin");
 			loginPOM.sendPassword("admin@123");
 			loginPOM.clickLoginBtn();
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 		 }
 	@Test(priority=1,enabled=true)
 	  public void CategoryCourse() {
@@ -59,7 +68,7 @@ public class AllowAdminToCreateCategorynCourse_47Test {
 	@Test(priority=3,enabled=true)
 	  public void AddCategory() throws InterruptedException {
 		  addCategoryPOM.sendcourse_category_code("BL1");//every time need to change the course
-		  Thread.sleep(1000);
+		 // Thread.sleep(1000);
 		  addCategoryPOM.sendcourse_category_name("Blended Learning2");
 		 addCategoryPOM.addingcoursesinthiscategoryradioBtn();
 		 
@@ -68,16 +77,16 @@ public class AllowAdminToCreateCategorynCourse_47Test {
 	@Test(priority=4,enabled=true)
 	public void CreatedCategorySubmit() throws InterruptedException {
 		 jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		  Thread.sleep(2000);
+		  //Thread.sleep(2000);
 		  addCategoryPOM.course_category_submitBtn();
-		 Thread.sleep(2000);
+		 //Thread.sleep(2000);
 		
 	}
 	@Test(priority=5,enabled=true)
 	  public void ClickAdministrationLinkthenCourseCategoryLink() throws InterruptedException {
 		addCategoryPOM.AdministrationLinkClick();
 		administrationPOM.clickCoursescategoriesLink();
-		Thread.sleep(4000);
+		//Thread.sleep(4000);
 
 	  }
 	@Test(priority=6,enabled=true)//Step 7 Added Category should get displayed in Courses categories
@@ -92,14 +101,14 @@ public class AllowAdminToCreateCategorynCourse_47Test {
 	@Test(priority=7,enabled=true)
 	  public void ClickAdministrationLink() throws InterruptedException {
 		addCategoryPOM.AdministrationLinkClick();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 
 	  }
 	  
 	  @Test(priority=8,enabled=true)
 	  public void CreateaCourseLink() throws InterruptedException {
 		administrationPOM.clickcreateaCoursesLink();
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 	 }
 	  @Test(priority=9,enabled=true)//step 9 validated Add a new course page should get displayed
 	  public void DisplayCreateACoursepage() throws InterruptedException {
@@ -108,7 +117,7 @@ public class AllowAdminToCreateCategorynCourse_47Test {
 		  Expected="Create a course";
 		  boolean createaCourse=Actual.contains(Expected);
 		  assertTrue(createaCourse);
-		  Thread.sleep(3000);
+		  //Thread.sleep(3000);
 		 }
 	  
 	  @Test(priority=10,enabled=true)
@@ -117,9 +126,8 @@ public class AllowAdminToCreateCategorynCourse_47Test {
 		  createACoursePOM.sendcourseTitle("Phython2"); //everytime need to change
 		  createACoursePOM.sendvisual_code("Phython2");
 		  createACoursePOM.selectcourse_teachers("satyaTec1 kumariTec1");
-		 // Thread.sleep(2000);
+		 
 		  createACoursePOM.selectCategoryFromList("(BL) Blended Learning"); //everytime need to change selection if we change course
-		  Thread.sleep(2000);
 		  createACoursePOM.update_course_language("English");
 		  createACoursePOM.clickCreateaCourseBtn();
 	  }
@@ -128,7 +136,7 @@ public class AllowAdminToCreateCategorynCourse_47Test {
 	  public void DisplayCourseinCourseListAfterCreatedCourse() throws InterruptedException {
 		  courseListPOM.sendsearch_courseitem("Phython2");//everytime need to change if want to change course
 		  courseListPOM.clicksearch_simple_submitBtn();
-		Thread.sleep(3000);  
+		//Thread.sleep(3000);  
 	  }
 	  @Test(priority=12,dependsOnMethods= {"DisplayCourseinCourseListAfterCreatedCourse"},enabled=true)//Step 15 added course should be visible
 	  public void DisplayAfterSearchedinList() {//check added item in courselist
@@ -147,6 +155,7 @@ public class AllowAdminToCreateCategorynCourse_47Test {
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		loginPOM = new LoginPOM(driver); 
 		jse=((JavascriptExecutor) driver);
 		administrationPOM=  new AdministrationPOM(driver);
@@ -160,7 +169,7 @@ public class AllowAdminToCreateCategorynCourse_47Test {
 	}
   @AfterClass
   public void tearDown() throws Exception {
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		driver.quit();
 	}
 

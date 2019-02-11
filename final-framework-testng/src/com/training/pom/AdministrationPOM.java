@@ -1,5 +1,6 @@
 package com.training.pom;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,14 +16,20 @@ private WebDriver driver;
 		}
 	@FindBy(xpath="//a[@title='Homepage']")
 	private WebElement HomePageAdmin;
-	
-	@FindBy(xpath="//a[contains(text(),'User list')]")
-	private WebElement userListlink;
-	
 	@FindBy(xpath="//a[@title='Administration']")
 	private WebElement AdministrationLabel;
 	
 	//Users 
+	@FindBy(xpath="//a[contains(text(),'User list')]")
+	private WebElement userListlink;
+	@FindBy(xpath="//input[@id='search_simple_keyword']")//search text box
+	private WebElement searchTextBox;
+	
+	@FindBy(xpath="//button[@id='search_simple_submit']")//search Button
+	private WebElement searchButton;
+	
+	@FindBy(xpath="//img[@title='Delete']")
+	private WebElement DeleteIcon;
 	
 	@FindBy(xpath="//a[contains(text(),'Add a user')]")
 	private WebElement AddaUserLink;
@@ -30,9 +37,7 @@ private WebDriver driver;
 	@FindBy(xpath="//a[contains(text(),'Classes')]")
 	private WebElement ClassesLink;
 	
-	
-	
-	//Under Courses Session
+	// Under Courses Session
 	@FindBy(xpath="//a[contains(text(),'Add a training session')]")
 	private WebElement Trainingsession;
 
@@ -41,6 +46,8 @@ private WebDriver driver;
 	private WebElement coursecategorylink;
 	
 	
+	
+	//courses section 
 	@FindBy(xpath="//a[contains(text(),'Create a course')]")
 	private WebElement createacourselink;
 	
@@ -56,20 +63,33 @@ private WebDriver driver;
 		this.HomePageAdmin.click();
 	}
 	
-	public void clickuserlistLink() {
-		this.userListlink.click(); 
-	}
-	
 	public void clickAdministrationLabel() {
 		this.AdministrationLabel.click();
 	}
 	//Under Users Section
+	public void clickuserlistLink() { // click user list link
+		this.userListlink.click();
+	}
+	public void SendNameTosearchTextBox(String searchTextBox) { // search name of user
+		this.searchTextBox.clear();
+		this.searchTextBox.sendKeys(searchTextBox);
+	}
+	public void clicksearchButton() { //click on search button
+		this.searchButton.click();
+	}
+	public void clickDeleteIcon() { //click on DeleteIcon
+		this.DeleteIcon.click();
+		Alert a=driver.switchTo().alert();
+		a.accept();
+		System.out.println("Deleted Class successfully"); 
+
+	}
 	
-	public void clickAddaUserLink() {
+	public void clickAddaUserLink() { //click Add a user link
 		this.AddaUserLink.click();
 	}
 	
-	public void clickClassesLink() {
+	public void clickClassesLink() { //click classes link
 		this.ClassesLink.click();
 	}
 	

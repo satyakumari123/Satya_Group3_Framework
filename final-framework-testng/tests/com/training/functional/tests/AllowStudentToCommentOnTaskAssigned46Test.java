@@ -2,6 +2,16 @@ package com.training.functional.tests;
 
 import org.testng.annotations.Test;
 
+/* Author : Satya Kumari
+ * TC ID  : ELTC_046
+ * TC Description :To verify whether application allows student to comment on the task assigned in the project
+ * Pre-condition : 1. User should have launched the application
+
+                   2. User should get logged in as student
+
+                   3. Teacher should have created project, assigned the role to student & assigned the task
+ */
+
 import com.training.generics.ScreenShot;
 import com.training.pom.CoursesCatalogPOM;
 import com.training.pom.LoginPOM;
@@ -19,6 +29,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -49,7 +60,7 @@ public class AllowStudentToCommentOnTaskAssigned46Test {
   public void clickCourseCatalogLink() throws InterruptedException {
 	  
 	  jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-	  Thread.sleep(3000);
+	 // Thread.sleep(3000);
 	  studentMyCoursesHomePagePOM.ClickCoursecatalogLink();
 	  
 	  	  
@@ -124,10 +135,10 @@ public class AllowStudentToCommentOnTaskAssigned46Test {
    public void TaskPerformedNSubmitByStudent() throws InterruptedException {
 	   
 	   studentAssignedTaskHomePagePOM.sendTitlebyStudent("TestedBySatya2");
-	   Thread.sleep(4000);
+	   //Thread.sleep(4000);
 	  
 	   studentAssignedTaskHomePagePOM.sendCommentContentByStudent("Comment from student in rich text");
-	   Thread.sleep(4000);
+	  // Thread.sleep(4000);
 	   studentAssignedTaskHomePagePOM.sendPostFileCommentByStudent("Entered post file comment");
 	   studentAssignedTaskHomePagePOM.clickSavePostByStudentBtn();
 	   
@@ -160,6 +171,7 @@ public class AllowStudentToCommentOnTaskAssigned46Test {
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		 jse =((JavascriptExecutor) driver);
 		loginPOM = new LoginPOM(driver); 
 		studentMyCoursesHomePagePOM=new StudentMyCoursesHomePagePOM(driver);
@@ -174,7 +186,7 @@ public class AllowStudentToCommentOnTaskAssigned46Test {
 	}
   @AfterClass
   public void tearDown() throws Exception {
-		Thread.sleep(3000);
+		
 		driver.quit();
 	}
 

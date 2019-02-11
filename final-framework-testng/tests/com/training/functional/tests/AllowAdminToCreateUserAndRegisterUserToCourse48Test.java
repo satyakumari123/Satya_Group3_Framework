@@ -1,7 +1,6 @@
 package com.training.functional.tests;
 
 import org.testng.annotations.Test;
-
 import com.training.generics.ScreenShot;
 import com.training.pom.AddCategoryPOM;
 import com.training.pom.AddUsersToCoursePOM;
@@ -19,11 +18,20 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+/* Author : Satya Kumari
+ * TC ID  : ELTC_048
+ * TC Description :TO verify whether application allows admin to create an user & register user to the course
+ * Pre-condition : 1. User should have launched the application
 
+                   2. User should get logged in as admin
+
+                   3. admin has already created course
+ */
 public class AllowAdminToCreateUserAndRegisterUserToCourse48Test {
 	
 	private static WebDriver driver;
@@ -45,7 +53,7 @@ public class AllowAdminToCreateUserAndRegisterUserToCourse48Test {
 		    loginPOM.sendUserName("admin");
 			loginPOM.sendPassword("admin@123");
 			loginPOM.clickLoginBtn();
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 		 }
 	
   @Test(priority=1,enabled=true)
@@ -78,7 +86,7 @@ public class AllowAdminToCreateUserAndRegisterUserToCourse48Test {
   @Test(priority=4,enabled=true)//click on administration link
   public void ClickAdministrationLink() throws InterruptedException {
 	addCategoryPOM.AdministrationLinkClick();
-	Thread.sleep(2000);
+	//Thread.sleep(2000);
 
   }
   
@@ -102,17 +110,14 @@ public class AllowAdminToCreateUserAndRegisterUserToCourse48Test {
 	  addUsersToCoursePOM.testUserListbackgroundcolor();//used coding for highlight background
 	  System.out.println("Highlighted Username :"+addUsersToCoursePOM.testUserListbackgroundcolor());
 	  //assertTrue(addUsersToCoursePOM.testUserListbackgroundcolor().contains("css=td[bgcolor=#000]"));
-	  
-  }
+	   }
   
   @Test(priority=8)//select course from course list and highted and add
   public void SelectCoursefromCourseListforUser() {
 	  addUsersToCoursePOM.selectCourseList("(MEDIUMTESTCASES) MediumProject");
 	  addUsersToCoursePOM.testCourseListbackgroundcolor();
 	  System.out.println("Highlighted Coursename :"+addUsersToCoursePOM.testCourseListbackgroundcolor());
-	  
-	  
-  }
+	   }
   @Test(priority=9)
   public void ClickUserListAddtoCourseBtn() {
 	  addUsersToCoursePOM.clickAddtothecourseBtn(); 
@@ -130,6 +135,16 @@ public class AllowAdminToCreateUserAndRegisterUserToCourse48Test {
 	  boolean labelMsg=Actual.contains(Expected);
 	  assertTrue(labelMsg);
   }
+  @Test(priority=11)
+  public void DeleteAddedUserfromUserlist()
+  {
+	  administrationPOM.clickAdministrationLabel();
+		//Thread.sleep(3000);
+		administrationPOM.clickuserlistLink();
+		administrationPOM.SendNameTosearchTextBox("SatyaTF112");
+		administrationPOM.clicksearchButton();
+		administrationPOM.clickDeleteIcon();
+  }
   
   
   @BeforeClass
@@ -138,6 +153,7 @@ public class AllowAdminToCreateUserAndRegisterUserToCourse48Test {
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		loginPOM = new LoginPOM(driver); 
 		 jse=((JavascriptExecutor) driver);
 		administrationPOM=  new AdministrationPOM(driver);
@@ -153,7 +169,7 @@ public class AllowAdminToCreateUserAndRegisterUserToCourse48Test {
 
   @AfterClass
   public void tearDown() throws Exception {
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		driver.quit();
 	}
 

@@ -1,5 +1,6 @@
 package com.training.pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,6 +38,19 @@ public class AddUsersToCoursePOM {
 	public void selectuserfromUserList(String SelectUselist) {//select user
 		Select selectuser=new Select(this.SelectUselist);
 		selectuser.selectByVisibleText(SelectUselist);	
+		
+	}
+	
+	public void selectuserfromUserListforExcel(String firstname,String lastname) {//select user from list for excelsheet
+		//Select selectuser=new Select(this.SelectUselist);
+		//String before
+		//*[ contains(text(),'Faculty Santhose')]
+		String before="//*[ contains(text(),'";
+		String after="')]";
+		String stringPath=before+firstname+lastname+after;
+		//selectuser.selectByVisibleText(SelectUselist);	
+		
+		driver.findElement(By.xpath(stringPath)).click();
 	}
 	public String testUserListbackgroundcolor()
 	{

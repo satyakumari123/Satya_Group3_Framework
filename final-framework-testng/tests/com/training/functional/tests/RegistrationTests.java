@@ -10,6 +10,9 @@ import com.training.utility.DriverNames;
 
 import org.testng.annotations.BeforeClass;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -25,6 +28,7 @@ public class RegistrationTests {
 	private RegistrationPOM registrationPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
+	public String Actual,Expected,Actual1,Expected1;
 
   @Test (priority=0)
   public void BrowserLaunchTest() {
@@ -49,11 +53,11 @@ public class RegistrationTests {
   public void RegisterHomeTest() throws InterruptedException {
 	  	
 	  Thread.sleep(3000);
-	  registrationPOM.sendregistration_firstname("SatyaS");
+	  registrationPOM.sendregistration_firstname("xyz");
 	  registrationPOM.sendregistration_lastname("KumariS");
 	  registrationPOM.sendRegistration_email("satyakumari@gmail.com");
 	  registrationPOM.sendRegistration_official_code("12345");
-	  registrationPOM.senduserName("SatyaSU");
+	  registrationPOM.senduserName("xyzxx");
 	  registrationPOM.sendPassword("satyaashu5");
 	  registrationPOM.sendconfirmPassword("satyaashu5");
 	  registrationPOM.sendregistration_phone("7722032874");
@@ -63,6 +67,34 @@ public class RegistrationTests {
 	  screenShot.captureScreenShot("RegistrationTest");
 	  registrationPOM.clickregistration_submitBtn();
 	 	
+  }
+  @Test(priority=3)
+  public void DisplayRegistrationSuccessfulFullMsg() {
+	/*  Actual=registrationPOM.DisplayRegistrationSuccessfulFullMsg();
+	  System.out.println("Actual msg"+Actual);
+	  Expected="Dear xyzxx KumariS,\n" + 
+	  		"\n" + 
+	  		"Your personal settings have been registered.\n" + 
+	  		"\n" + 
+	  		"An email has been sent to help you remember your login and password.";
+	  System.out.println("Expected msg"+Expected);
+	  
+	  boolean msgDisplayed=Actual.contains(Expected);
+	  assertTrue(msgDisplayed);*/
+	  Actual1=registrationPOM.DisplayRegistrationUsersuccessfulSentMsghalf();
+		System.out.println("Actual1 "+Actual1);
+		Expected1="Dear xyz KumariS,\n"+
+				"\n"+
+				"Your personal settings have been registered.";
+		System.out.println("Expected1 "+Expected1);
+		boolean value1=Actual1.contains(Expected1);
+		assertTrue(value1);
+		Actual=registrationPOM.DisplayRegistrationMailsentMsgHalf();
+		System.out.println("Actual "+Actual);
+		Expected="An email has been sent to help you remember your login and password.";
+		System.out.println("Expected "+Expected);
+		boolean value=Actual.contains(Expected);
+		assertEquals(Actual,Expected);
   }
   
   @BeforeClass

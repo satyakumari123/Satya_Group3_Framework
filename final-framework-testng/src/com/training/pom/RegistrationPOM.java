@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class RegistrationPOM {
 private WebDriver driver; 
@@ -40,11 +41,36 @@ private WebDriver driver;
 	/*@FindBy(xpath="//input[@id='qf_58822b']")  
 	private WebElement Teacher;//select teacher */
 	
-	@FindBy(xpath="(//input[@name='status'])[2]")
+	@FindBy(id="registration_language")
+	private WebElement registration_language;
+	
+	@FindBy(xpath="(//input[@name='status'])[2]")//for selecting Teacher radio button
 	private WebElement registration_profile;
 
 	@FindBy(id="registration_submit")
 	private WebElement registration_submit; 
+	
+	//Registration error message for wrong username (Expected msg= "Your login can only contain letters, numbers and _.-")
+	@FindBy(xpath="//div[@class='alert alert-warning']")
+	private WebElement errorMsgforWrongUsername;
+	
+	//Registration error message for wrong email (Expected msg="The email address is not complete or contains some invalid characters")
+	@FindBy(xpath="//div[@class='alert alert-warning']")
+	private WebElement errorMsgforWrongemail;
+	
+	//Registration successful message
+	/*Dear xyz abc,
+
+     Your personal settings have been registered.*/
+	
+	@FindBy(xpath="//div[@class='col-xs-12 col-md-12']//p[1]")
+	private WebElement UsersuccessfulSentMsghalf;
+	
+	@FindBy(xpath="//p[contains(text(),'An email has been sent to help you remember your l')]")
+	private WebElement mailSentMsghalf;
+	
+	@FindBy(xpath="//div[@class='col-xs-12 col-md-12']")
+	private WebElement SuccessfulFullMsg;
 	
 	public void sendregistration_firstname(String registration_firstname) {
 		this.registration_firstname.clear();
@@ -78,6 +104,10 @@ private WebDriver driver;
 		this.registration_phone.clear();
 		this.registration_phone.sendKeys(registration_phone);
 	}
+	public void selectLanguage(String registration_language) {
+		Select dropdown = new Select(this.registration_language);
+		dropdown.selectByVisibleText(registration_language);
+}
 	public void clickTeacherRBtn() {
 		registration_profile.click(); //for selecting teacher
 	}
@@ -85,5 +115,23 @@ private WebDriver driver;
 	public void clickregistration_submitBtn() {
 		this.registration_submit.submit(); 
 	}
+	//Registration Successful msg
+	public String DisplayRegistrationMailsentMsgHalf() {
+		return this.mailSentMsghalf.getText(); 
+	}
+	
+	public String DisplayRegistrationUsersuccessfulSentMsghalf() {
+		return this.UsersuccessfulSentMsghalf.getText();
+	}
+	
+	/*public String DisplayRegistrationSuccessfulFullMsg() {//not usefull as next button content is also covered
+		return this.SuccessfulFullMsg.getText(); 
+	}*/
+	
+	//Registration Fail msg
+	
+		public String DisplayRegistrationErrorMsg() {
+			return this.errorMsgforWrongemail.getText();
+		}
 	
 }

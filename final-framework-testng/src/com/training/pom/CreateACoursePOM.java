@@ -1,5 +1,6 @@
 package com.training.pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -37,6 +38,8 @@ public class CreateACoursePOM {
 	
 	@FindBy(id="update_course_submit") 
 	private WebElement update_course_submit;
+	
+	
 	
 	public String DisplayCreate_a_course_title_alertmsg() {
 		return this.Create_a_course_title.getText(); 
@@ -84,5 +87,14 @@ public class CreateACoursePOM {
     public void clickCreateaCourseBtn() {
 		this.update_course_submit.submit(); 
 	}
+    
+    public void ClickonCreatedCoursePage(String Coursename) {
+    	//a[contains(text(),'SeleniumCourseSatya')]
+    	Start="//a[contains(text(),'";
+    	End="')]";
+    	Total=Start+Coursename+End;
+    	driver.findElement(By.xpath(Start+Coursename+End)).click();
+    	
+    }
 
 }

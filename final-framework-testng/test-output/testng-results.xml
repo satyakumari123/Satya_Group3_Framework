@@ -1,49 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+<testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="34715" started-at="2019-02-04T11:36:17Z" finished-at="2019-02-04T11:36:52Z">
+  <suite name="Default suite" duration-ms="62443" started-at="2019-02-11T16:07:40Z" finished-at="2019-02-11T16:08:43Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="34715" started-at="2019-02-04T11:36:17Z" finished-at="2019-02-04T11:36:52Z">
-      <class name="com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="setUpBeforeClass" is-config="true" duration-ms="9100" started-at="2019-02-04T11:36:17Z" finished-at="2019-02-04T11:36:26Z">
+    <test name="Default test" duration-ms="62443" started-at="2019-02-11T16:07:40Z" finished-at="2019-02-11T16:08:43Z">
+      <class name="com.training.functional.tests.AllowAdminToCreateTrainingSession50Test">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="setUpBeforeClass" is-config="true" duration-ms="38156" started-at="2019-02-11T16:07:40Z" finished-at="2019-02-11T16:08:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="loginProfileAdmin()[pri:0, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="loginProfileAdmin" duration-ms="6506" started-at="2019-02-04T11:36:26Z" finished-at="2019-02-04T11:36:32Z">
+        <test-method status="PASS" signature="validLoginTest()[pri:0, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="validLoginTest" duration-ms="5536" started-at="2019-02-11T16:08:18Z" finished-at="2019-02-11T16:08:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginProfileAdmin -->
-        <test-method status="PASS" signature="CategoryCourse()[pri:1, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="CategoryCourse" duration-ms="1523" started-at="2019-02-04T11:36:32Z" finished-at="2019-02-04T11:36:34Z">
+        </test-method> <!-- validLoginTest -->
+        <test-method status="PASS" signature="AdministrationHomePageValidation()[pri:1, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="AdministrationHomePageValidation" duration-ms="23" started-at="2019-02-11T16:08:24Z" finished-at="2019-02-11T16:08:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CategoryCourse -->
-        <test-method status="PASS" signature="CategoryCourseImage()[pri:2, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="CategoryCourseImage" duration-ms="1082" started-at="2019-02-04T11:36:34Z" finished-at="2019-02-04T11:36:35Z">
+        </test-method> <!-- AdministrationHomePageValidation -->
+        <test-method status="PASS" signature="AdministrationHomePageUnderCoursesessions()[pri:2, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="AdministrationHomePageUnderCoursesessions" duration-ms="4248" started-at="2019-02-11T16:08:24Z" finished-at="2019-02-11T16:08:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CategoryCourseImage -->
-        <test-method status="PASS" signature="AddCategory()[pri:3, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="AddCategory" duration-ms="1565" started-at="2019-02-04T11:36:35Z" finished-at="2019-02-04T11:36:37Z">
+        </test-method> <!-- AdministrationHomePageUnderCoursesessions -->
+        <test-method status="PASS" signature="AddaTrainingSessionPage()[pri:3, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="AddaTrainingSessionPage" duration-ms="2963" started-at="2019-02-11T16:08:28Z" finished-at="2019-02-11T16:08:31Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddCategory -->
-        <test-method status="PASS" signature="CreatedCategorySubmit()[pri:4, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="CreatedCategorySubmit" duration-ms="4830" started-at="2019-02-04T11:36:37Z" finished-at="2019-02-04T11:36:41Z">
+        </test-method> <!-- AddaTrainingSessionPage -->
+        <test-method status="PASS" signature="Displaycoursestothissessionname()[pri:4, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="Displaycoursestothissessionname" duration-ms="139" started-at="2019-02-11T16:08:31Z" finished-at="2019-02-11T16:08:31Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreatedCategorySubmit -->
-        <test-method status="PASS" signature="ClickAdministrationLinkthenCourseCategoryLink()[pri:5, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="ClickAdministrationLinkthenCourseCategoryLink" duration-ms="6167" started-at="2019-02-04T11:36:41Z" finished-at="2019-02-04T11:36:48Z">
+        </test-method> <!-- Displaycoursestothissessionname -->
+        <test-method status="PASS" signature="ValidateSelectedCoursefromCourseListHighlighted()[pri:5, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="ValidateSelectedCoursefromCourseListHighlighted" duration-ms="296" started-at="2019-02-11T16:08:31Z" finished-at="2019-02-11T16:08:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ClickAdministrationLinkthenCourseCategoryLink -->
-        <test-method status="PASS" signature="NemeofAddedCategoryDisplayedinCoursescategories()[pri:6, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="NemeofAddedCategoryDisplayedinCoursescategories" duration-ms="68" started-at="2019-02-04T11:36:48Z" finished-at="2019-02-04T11:36:48Z">
+        </test-method> <!-- ValidateSelectedCoursefromCourseListHighlighted -->
+        <test-method status="PASS" signature="validateSelectedCourseinCoursesinThisSession()[pri:6, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="validateSelectedCourseinCoursesinThisSession" duration-ms="273" started-at="2019-02-11T16:08:32Z" finished-at="2019-02-11T16:08:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NemeofAddedCategoryDisplayedinCoursescategories -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test@6f7fd0e6]" name="tearDown" is-config="true" duration-ms="3830" started-at="2019-02-04T11:36:48Z" finished-at="2019-02-04T11:36:52Z">
+        </test-method> <!-- validateSelectedCourseinCoursesinThisSession -->
+        <test-method status="PASS" signature="StudentSubscribe()[pri:7, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="StudentSubscribe" duration-ms="2093" started-at="2019-02-11T16:08:32Z" finished-at="2019-02-11T16:08:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StudentSubscribe -->
+        <test-method status="PASS" signature="StudentSessionSubscribe()[pri:8, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="StudentSessionSubscribe" duration-ms="2014" started-at="2019-02-11T16:08:34Z" finished-at="2019-02-11T16:08:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StudentSessionSubscribe -->
+        <test-method status="PASS" signature="StudentSessionSubscribemessage()[pri:9, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="StudentSessionSubscribemessage" duration-ms="245" started-at="2019-02-11T16:08:36Z" finished-at="2019-02-11T16:08:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StudentSessionSubscribemessage -->
+        <test-method status="PASS" signature="FinishSubmissionBtn()[pri:10, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="FinishSubmissionBtn" duration-ms="5190" started-at="2019-02-11T16:08:36Z" finished-at="2019-02-11T16:08:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FinishSubmissionBtn -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.AllowAdminToCreateTrainingSession50Test@47c62251]" name="tearDown" is-config="true" duration-ms="1186" started-at="2019-02-11T16:08:41Z" finished-at="2019-02-11T16:08:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.functional.tests.AllowAdminToCreateCategorynCourse_47Test -->
+      </class> <!-- com.training.functional.tests.AllowAdminToCreateTrainingSession50Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

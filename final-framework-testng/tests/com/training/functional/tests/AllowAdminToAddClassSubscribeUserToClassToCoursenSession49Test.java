@@ -22,11 +22,18 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+/* Author : Satya Kumari
+ * TC ID  : ELTC_049
+ * TC Description :TO verify whether application allows admin to add classes, subscribe user to class, subscribe class to course & subscribe class to sessions
+ * Pre-condition : 1. User should have launched the application
 
+                   2. User should have logged in as admin and present in Home page
+ */
 public class AllowAdminToAddClassSubscribeUserToClassToCoursenSession49Test {
 	
 	private static WebDriver driver;
@@ -161,7 +168,7 @@ public class AllowAdminToAddClassSubscribeUserToClassToCoursenSession49Test {
 	  Actual=afterSubscribeClassToCoursesPOM.AlertmsgAfterClassToCoursesAdded();
 	  boolean labelmsg=Actual.contains(Expected);
 	  assertTrue(labelmsg);
-	  Thread.sleep(3000);
+	  //Thread.sleep(3000);
 	  
 	  }
   @Test(priority=13,enabled=true)
@@ -190,6 +197,7 @@ public class AllowAdminToAddClassSubscribeUserToClassToCoursenSession49Test {
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		loginPOM = new LoginPOM(driver); 
 		administrationPOM=  new AdministrationPOM(driver);
 		new AddCategoryPOM(driver);
@@ -209,7 +217,7 @@ public class AllowAdminToAddClassSubscribeUserToClassToCoursenSession49Test {
 	}
   @AfterClass
   public void tearDown() throws Exception {
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		driver.quit();
 	}
 }

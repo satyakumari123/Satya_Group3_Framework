@@ -69,7 +69,8 @@ public List<WebElement> ajax_listuser_Destination() {
 	}
   
    public String ajax_listuser1stDestination() {
-	  return this.destination1stusers.getText();
+	  return this.destination1stusers.getText();// On 11 Feb 
+	  //return this.Portaluserslistnamelink.getText();
 	  }
 
 public void FinishsessioncreationClick() {

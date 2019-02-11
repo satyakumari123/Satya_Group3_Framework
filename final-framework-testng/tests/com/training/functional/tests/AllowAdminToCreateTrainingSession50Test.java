@@ -17,9 +17,19 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterClass;
+
+/* Author : Satya Kumari
+ * TC ID  : ELTC_50
+ * TC Description :To verify whether application allows admin to create training session
+ * Pre-condition :1. User should have launched the application
+
+                  2. User should have logged in as admin and present in Home page 
+ */
 
 public class AllowAdminToCreateTrainingSession50Test {
 	private static WebDriver driver;
@@ -44,7 +54,7 @@ public class AllowAdminToCreateTrainingSession50Test {
   @Test(priority=1)
   public void AdministrationHomePageValidation() throws InterruptedException {
 	     // administrationPOM.clickAdministrationLabel();
-		  Thread.sleep(5000);
+		  //Thread.sleep(5000);
 		 Expected="http://elearning.upskills.in/main/admin/index.php";       	
 		  Actual=driver.getCurrentUrl();
 		  System.out.println("URL Actual :"+driver.getCurrentUrl());
@@ -55,7 +65,7 @@ public class AllowAdminToCreateTrainingSession50Test {
   @Test(priority=2)//click on Add a training session link step 2 validation
   public void AdministrationHomePageUnderCoursesessions() throws InterruptedException{
 	     administrationPOM.clickAddTrainingsession();
-	     Thread.sleep(3000);
+	     //Thread.sleep(3000);
 	     Expected="http://elearning.upskills.in/main/session/session_add.php";          
 	     Actual= driver.getCurrentUrl();
 	     System.out.println("URL Actual :"+driver.getCurrentUrl());
@@ -85,7 +95,7 @@ public class AllowAdminToCreateTrainingSession50Test {
 	  addCoursestoSessionPOM.testSlectedCoursebackgroundcolorinCourseList();//background clour of selected item
 	  System.out.println("Selected course Highlighted "+addCoursestoSessionPOM.testSlectedCoursebackgroundcolorinCourseList());
 	  
-	  Thread.sleep(4000);
+	 // Thread.sleep(4000);
  }
   
   @Test(priority=6)//Step 6 validated selected course in Courses in this session window should get displayed
@@ -133,16 +143,16 @@ public class AllowAdminToCreateTrainingSession50Test {
   @Test(priority=9)//step 9 validated
   public void StudentSessionSubscribemessage() throws InterruptedException
   {
-	  Thread.sleep(3000);
+	  //Thread.sleep(3000);
    subscribeUserPOM.PortaluserslistnamelinkClick();
    subscribeUserPOM.ajax_listuser1stDestination();
    //Actual="kumar sunil (sunil94)";
-   Actual="kumar sunil (sunkum09) SUNKUM09 ";
-   Expected=subscribeUserPOM.ajax_listuser1stDestination();
-   System.out.println("Expected Displayed "+subscribeUserPOM.ajax_listuser1stDestination());
+   Expected="kumar sunil (sunkum09) SUNKUM09 ";
+   Actual=subscribeUserPOM.ajax_listuser1stDestination();
+   System.out.println("Actual Displayed "+subscribeUserPOM.ajax_listuser1stDestination());
    boolean username=Actual.contains(Expected);
    assertTrue(username);
-   Thread.sleep(4000);
+   //Thread.sleep(4000);
   }
   
   @Test(priority=10)//step 10 validated
@@ -163,6 +173,7 @@ public class AllowAdminToCreateTrainingSession50Test {
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		loginPOM = new LoginPOM(driver); 
 		administrationPOM=  new AdministrationPOM(driver);
 		addaTrainingSessionPOM=new AddaTrainingSessionPOM(driver);
@@ -177,7 +188,7 @@ public class AllowAdminToCreateTrainingSession50Test {
 
   @AfterClass
   public void tearDown() throws Exception {
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		driver.quit();
 	}
 }

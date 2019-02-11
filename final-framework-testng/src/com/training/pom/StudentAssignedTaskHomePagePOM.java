@@ -60,12 +60,11 @@ public class StudentAssignedTaskHomePagePOM {
 	 /////////////////////////
 	 ///////////////////////
 	public void sendCommentContentByStudent(String editableRichtextbox) {
-		driver.switchTo().frame(CommentContentByStudent);
+		driver.switchTo().frame(CommentContentByStudent);//this is i frame
 		//WebElement editableRichtextbox = driver.switchTo().activeElement();
-		 this.editableRichtextbox = driver.switchTo().activeElement();
-		 this.editableRichtextbox.sendKeys(editableRichtextbox);
-		 
-		 commentvalue=this.editableRichtextbox.getText();//getting value of rich textcomment box
+	   this.editableRichtextbox = driver.switchTo().activeElement();//we are accessing same rich text box active
+       this.editableRichtextbox.sendKeys(editableRichtextbox);//sending the comments on rich text box 
+	  commentvalue=this.editableRichtextbox.getText();//getting value of rich textcomment box
 		 //Sir used getAttribute("value") but here it is not working ???
 		 //System.out.println("Richtextbox comment:"+commentvalue);
 		      driver.switchTo().defaultContent();
