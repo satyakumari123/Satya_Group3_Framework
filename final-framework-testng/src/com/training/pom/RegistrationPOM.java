@@ -75,39 +75,74 @@ private WebDriver driver;
 	public void sendregistration_firstname(String registration_firstname) {
 		this.registration_firstname.clear();
 		this.registration_firstname.sendKeys(registration_firstname);
+		}
+	public String returnFirstName()//for database assertion
+	{
+		return this.registration_firstname.getAttribute("value");
 	}
 	public void sendregistration_lastname(String registration_lastname) {
 		this.registration_lastname.clear();
 		this.registration_lastname.sendKeys(registration_lastname);
 	}
+	public String returnLastName()//for database assertion
+	{
+		return this.registration_lastname.getAttribute("value");
+	}
 	public void sendRegistration_email(String registration_email) {
 		this.registration_email.clear();
 		this.registration_email.sendKeys(registration_email);
+	}
+	public String returneMail()//for database assertion
+	{
+		return this.registration_email.getAttribute("value");
 	}
 	public void sendRegistration_official_code(String registration_official_code) {
 		this.registration_official_code.clear();
 		this.registration_official_code.sendKeys(registration_official_code);
 	}
+	
 	public void senduserName(String username) {
 		this.username.clear();
 		this.username.sendKeys(username);
+	}
+	public String returnUserName()//for database assertion
+	{
+		return this.username.getAttribute("value");
 	}
 	public void sendPassword(String pass1) {
 		this.pass1.clear();
 		this.pass1.sendKeys(pass1);
 	}
+	public String returnPass()//for database assertion
+	{
+		return this.pass1.getAttribute("value");
+	}
 	public void sendconfirmPassword(String pass2) {
 		this.pass2.clear();
 		this.pass2.sendKeys(pass2);
+	}
+	public String returnConfirmPass()//for database assertion
+	{
+		return this.pass2.getAttribute("value");
 	}
 	public void sendregistration_phone(String registration_phone) {
 		this.registration_phone.clear();
 		this.registration_phone.sendKeys(registration_phone);
 	}
+	public String returnPhone()//for database assertion
+	{
+		return this.registration_phone.getAttribute("value");
+	}
 	public void selectLanguage(String registration_language) {
 		Select dropdown = new Select(this.registration_language);
 		dropdown.selectByVisibleText(registration_language);
+		
 }
+	public String returnLanguage()//for database assertion
+	{  Select dropdown = new Select(this.registration_language);
+	//WebElement ele=dropdown.selectByVisibleText(registration_language);
+		return this.registration_language.getAttribute("value");
+	}
 	public void clickTeacherRBtn() {
 		registration_profile.click(); //for selecting teacher
 	}

@@ -6,6 +6,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -22,8 +23,13 @@ import com.training.pom.LoginPOM;
 import com.training.pom.RegistrationPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
-
-public class TC_76ApplicationallowmultiFinalTest {
+/* Author : Satya Kumari
+ * TC ID  : ELTC_076
+ * TC Description :TO verify whether application allows multiple user to get registered as Teacher
+ * Pre-condition : 1. User should have launched the application
+ * #Comment Everytime need to change Sheet name as TC_76 in Apache POI class
+ */
+public class TC_76ApplicationallowmultiUserToRegisterTest {
 	private static WebDriver driver;
 	private static JavascriptExecutor jse ;
 	private static String baseUrl;
@@ -38,6 +44,7 @@ public class TC_76ApplicationallowmultiFinalTest {
 	@Test(priority=0)
 	  public void BrowserLaunchTest() {
 		    driver = DriverFactory.getDriver(DriverNames.CHROME);
+		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			 baseUrl = properties.getProperty("baseURL");
 			loginPOM = new LoginPOM(driver);
 			registrationPOM=new RegistrationPOM(driver);
@@ -51,9 +58,9 @@ public class TC_76ApplicationallowmultiFinalTest {
 	
 	@Test(priority=1,dataProvider="excel-inputs",dataProviderClass=RegistrationDataProviders.class)
 	public void EnterUserCredntialsTogetRegistered(String FirstName, String LastName,String eMail,String UserName,String Pass,String ConfirmPass, String Phone,String Language) throws InterruptedException {
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		  loginPOM.signUpLink();
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		  registrationPOM.sendregistration_firstname(FirstName);
 		  registrationPOM.sendregistration_lastname(LastName);
 		  registrationPOM.sendRegistration_email(eMail);
@@ -63,12 +70,12 @@ public class TC_76ApplicationallowmultiFinalTest {
 		  registrationPOM.sendconfirmPassword(ConfirmPass);
 		  registrationPOM.sendregistration_phone(Phone);
 		  registrationPOM.selectLanguage(Language);
-		  Thread.sleep(3000);
+		 // Thread.sleep(3000);
 		  registrationPOM.clickTeacherRBtn();//able to select teacher radio button
-		 Thread.sleep(2000);
+		 
 		  screenShot.captureScreenShot("RegistrationTest");
 		  registrationPOM.clickregistration_submitBtn();
-		  Thread.sleep(4000);
+		  
 				//Check assertion for displayed message after registration				
 			Actual1=registrationPOM.DisplayRegistrationUsersuccessfulSentMsghalf();
 			System.out.println("Actual1 "+Actual1);
@@ -87,20 +94,20 @@ public class TC_76ApplicationallowmultiFinalTest {
 			
 			elearningHomePOM.ElearningHDropdownClick();//from teacher login
 			elearningHomePOM.clicklogoutDBtn();
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			loginPOM.sendUserName("admin");
 			loginPOM.sendPassword("admin@123");
 			loginPOM.clickLoginBtn();
 			administrationPOM.clickAdministrationLabel();
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			administrationPOM.clickuserlistLink();
 			administrationPOM.SendNameTosearchTextBox(UserName);
 			administrationPOM.clicksearchButton();
 			administrationPOM.clickDeleteIcon();
-			Thread.sleep(4000);
+			//Thread.sleep(4000);
 			elearningHomePOM.ElearningHDropdownClick();//from teacher login
 			elearningHomePOM.clicklogoutDBtn();
-			Thread.sleep(4000);
+			//Thread.sleep(4000);
 			
 	}
   
@@ -115,7 +122,7 @@ public class TC_76ApplicationallowmultiFinalTest {
 
   @AfterClass
   public void tearDown() throws Exception {
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		driver.quit();
 	}
 

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 public class AddUsersToCoursePOM {
 	
 	private WebDriver driver;
+	public String after,before,totalpath,Stringpath;
 	public AddUsersToCoursePOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
@@ -41,16 +42,25 @@ public class AddUsersToCoursePOM {
 		
 	}
 	
-	public void selectuserfromUserListforExcel(String firstname,String lastname) {//select user from list for excelsheet
-		//Select selectuser=new Select(this.SelectUselist);
-		//String before
+	public void selectuserfromUserListforExcel(String lastname) {//select Userlist for excelsheet
+		//select user from list for excelsheet
 		//*[ contains(text(),'Faculty Santhose')]
+		
+		//Select selectuser=new Select(this.SelectUselist);
+		//selectuser.selectByVisibleText(SelectUselist);
+		
 		String before="//*[ contains(text(),'";
 		String after="')]";
-		String stringPath=before+firstname+lastname+after;
-		//selectuser.selectByVisibleText(SelectUselist);	
+		String totalpath=before+lastname+after;
+			
+		WebElement ele=driver.findElement(By.xpath(totalpath));
+		Select selectuser=new Select(ele);
+		selectuser.selectByVisibleText(lastname);
 		
-		driver.findElement(By.xpath(stringPath)).click();
+		//String Stringpath=driver.findElement(By.xpath(totalpath)).getText();
+		
+		
+		
 	}
 	public String testUserListbackgroundcolor()
 	{

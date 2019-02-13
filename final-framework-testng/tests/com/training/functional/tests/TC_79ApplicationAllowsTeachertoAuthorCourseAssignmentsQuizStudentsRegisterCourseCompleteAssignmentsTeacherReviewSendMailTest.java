@@ -24,11 +24,20 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+/* Author : Satya Kumari
+ * TC ID  : ELTC_079
+ * TC Description :To verify whether application allows teacher to author course with assignments as quiz, students register the course complete assignments & teacher review & send mail
+ * Pre-condition : 1. User should have launched the application
 
+                   2. User should get logged in as Teacher
+
+                   3. User should have created course & Test
+ */
 public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest {
 	
 	private static WebDriver driver;
@@ -51,6 +60,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	@Test (priority=0)
 	  public void BrowserLaunchTest() throws IOException {
 		    driver = DriverFactory.getDriver(DriverNames.CHROME);
+		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		    baseUrl = properties.getProperty("baseURL");
 			screenShot = new ScreenShot(driver); 
 			jse =((JavascriptExecutor) driver);
@@ -73,7 +83,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 			loginPOM.sendUserName("satyaTec6");//login with teacher
 			loginPOM.sendPassword("satyaashu5");
 			loginPOM.clickLoginBtn();
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			jse.executeScript("window.scrollBy(0,500)");
 			createACoursePOM.ClickonCreatedCoursePage("SeleniumCourseSatya ");//click on existing course having task
 			}
@@ -100,7 +110,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	@Test(priority=4,enabled=true)
 	public void ChooseTypeOfActivityToAccess() throws InterruptedException {
 	    assessmentHomePagePOM.ChooseTypeOfActivityToAccess();
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		assessmentHomePagePOM.DisplayTestsInChooseActivity();
 		Actual=assessmentHomePagePOM.DisplayTestsInChooseActivity();
 		Expected="Tests";
@@ -121,7 +131,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	public void clickOnEditIconofCreatedAssessment() throws InterruptedException {
 		assessmentHomePagePOM.clickoneditIconofCreatedAssessment();
 		//parent::tbody//img[@title='Edit']
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		assessmentHomePagePOM.clickOnEditButton();
 	}
 	@Test(priority=7)
@@ -137,7 +147,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	 public void SignOutFromTeacherTest() throws InterruptedException {//click on right icon for veiw list,inbox,elearning,logout
 		  elearningHomePOM.ElearningHDropdownClick();//from teacher login
 		 
-		  Thread.sleep(3000);
+		  //Thread.sleep(3000);
 		  elearningHomePOM.clicklogoutDBtn();
 		  }
 	@Test(priority=9,enabled=true)
@@ -145,13 +155,13 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 		loginPOM.sendUserName("satyaStu5");//login with teacher
 		loginPOM.sendPassword("satyaashu5");
 		loginPOM.clickLoginBtn();
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		}
 	@Test(priority=10)//click on Course catalog Step 1 
 	  public void clickCourseCatalogLink() throws InterruptedException {
 		  
 		  jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		  Thread.sleep(3000);
+		 // Thread.sleep(3000);
 		  studentMyCoursesHomePagePOM.ClickCoursecatalogLink();
 		  }
 	  @Test(priority=11,enabled=true)//click on search item 
@@ -160,7 +170,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 		  coursesCatalogPOM.sendSearch_item("SeleniumCourseSatya");
 		  coursesCatalogPOM.clickSearchsubmit_Btn();
 		  jse.executeScript("window.scrollBy(0,300)");
-		  Thread.sleep(2000);
+		 // Thread.sleep(2000);
 	      coursesCatalogPOM.ClickonSubscribed_Project_Link();//Select project which has subscribed and click on project link
 	   }
 	  
@@ -168,7 +178,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	  public void clickOnStudentAssessmentLink() throws InterruptedException {//Click on assessment link
 		  jse.executeScript("window.scrollBy(0,500)");
 		courseHomePageInsidePOM.clickAssessmentLink();//click on assessment link inside course
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		assessmentHomePagePOM.clickOnlineSeleniumTestsLink(); //click on created test link inside Assessment homepage
 		assessmentHomePagePOM.clickOnStartTestsBtn();
 		}
@@ -177,13 +187,13 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	  public void clickonAnswersofTest() throws InterruptedException {
 		  assessmentHomePagePOM.clickOn1stQuestionAnswer();
 		  assessmentHomePagePOM.clickNextQuestionBtn();
-		  Thread.sleep(3000);
+		 // Thread.sleep(3000);
 		  assessmentHomePagePOM.clickOn2ndQuestionAnswer();
 		  assessmentHomePagePOM.clickNextQuestionBtn();
-		  Thread.sleep(3000);
+		  //Thread.sleep(3000);
 		  assessmentHomePagePOM.clickOn3rdQuestionAnswer();
 		  assessmentHomePagePOM.clickNextQuestionBtn();
-		  Thread.sleep(3000);
+		 // Thread.sleep(3000);
 	  }
 	  
 	  @Test(priority=14)
@@ -202,7 +212,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 		 public void SignOutFromStudentTest() throws InterruptedException {//click on right icon for veiw list,inbox,elearning,logout
 			  elearningHomePOM.ElearningHDropdownClick();//from Student login
 			 
-			  Thread.sleep(3000);
+			 // Thread.sleep(3000);
 			  elearningHomePOM.clicklogoutDBtn();
 			  }
 	  @Test(priority=16)//Login with Student
@@ -210,7 +220,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 		    loginPOM.sendUserName("satyaTec6");//login with teacher
 			loginPOM.sendPassword("satyaashu5");
 			loginPOM.clickLoginBtn();
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			jse.executeScript("window.scrollBy(0,500)");
 			createACoursePOM.ClickonCreatedCoursePage("SeleniumCourseSatya ");//click on existing course having task
 			courseHomePageInsidePOM.clickTestsLink();	
@@ -234,8 +244,8 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	
   @AfterClass
   public void tearDown() throws Exception {
-		Thread.sleep(3000);
-		//driver.quit();
+		//Thread.sleep(3000);
+		driver.quit();
 	}
 
 }

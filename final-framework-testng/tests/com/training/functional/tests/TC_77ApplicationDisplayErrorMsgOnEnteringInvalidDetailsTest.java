@@ -20,12 +20,18 @@ import static org.testng.Assert.assertEquals;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
-
+/* Author : Satya Kumari
+ * TC ID  : ELTC_077
+ * TC Description :TO verify whether application displays error message upon entering invalid details while getting registered as Teacher
+ * Pre-condition : 1. User should have launched the application
+ * #Comment Everytime need to change Sheet name as TC_77 in Apache POI class
+ */
 public class TC_77ApplicationDisplayErrorMsgOnEnteringInvalidDetailsTest {
 	private static WebDriver driver;
 	private static JavascriptExecutor jse ;
@@ -40,6 +46,7 @@ public class TC_77ApplicationDisplayErrorMsgOnEnteringInvalidDetailsTest {
 	@BeforeMethod
 	  public void BrowserLaunchTest() {
 		    driver = DriverFactory.getDriver(DriverNames.CHROME);
+		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			 baseUrl = properties.getProperty("baseURL");
 			loginPOM = new LoginPOM(driver);
 			registrationPOM=new RegistrationPOM(driver);
@@ -54,7 +61,7 @@ public class TC_77ApplicationDisplayErrorMsgOnEnteringInvalidDetailsTest {
 	public void EnterUserCredntialsTogetRegistered(String FirstName, String LastName,String eMail,String UserName,String Pass,String ConfirmPass, String Phone,String Language) throws InterruptedException {
 		try {
 		loginPOM.signUpLink();
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		  registrationPOM.sendregistration_firstname(FirstName);
 		  registrationPOM.sendregistration_lastname(LastName);
 		  registrationPOM.sendRegistration_email(eMail);
@@ -64,38 +71,33 @@ public class TC_77ApplicationDisplayErrorMsgOnEnteringInvalidDetailsTest {
 		  registrationPOM.sendconfirmPassword(ConfirmPass);
 		  registrationPOM.sendregistration_phone(Phone);
 		  registrationPOM.selectLanguage(Language);
-		  Thread.sleep(3000);
 		  registrationPOM.clickTeacherRBtn();//able to select teacher radio button
-		  Thread.sleep(2000);
-		  screenShot.captureScreenShot("RegistrationTest");
+		  	screenShot.captureScreenShot("RegistrationTest");
 		  registrationPOM.clickregistration_submitBtn();
-		  Thread.sleep(4000);
-		  //elearningHomePOM.ElearningHDropdownClick();//from performing log out
-		 // elearningHomePOM.clicklogoutDBtn();
+		 
 		  Actual=registrationPOM.DisplayRegistrationErrorMsg();
 		 // if (Actual!=null) {
 		  System.out.println("Error Msg After Clicked registration Btn :"+Actual);
-		  
-		  //}
+		   //}
 		  }catch(NoSuchElementException e) {
 		      //String xyz=registrationPOM.DisplayRegistrationMailsentMsgHalf(); 
-			  System.out.println("Registration Done successfully No error");
+			  System.out.println("Registration Done successfully: This is Defect: As accepted wrong data");
 			    elearningHomePOM.ElearningHDropdownClick();//from teacher login
 				elearningHomePOM.clicklogoutDBtn();
-				Thread.sleep(3000);
+				
 				loginPOM.sendUserName("admin");
 				loginPOM.sendPassword("admin@123");
 				loginPOM.clickLoginBtn();
 				administrationPOM.clickAdministrationLabel();
-				Thread.sleep(3000);
+				
 				administrationPOM.clickuserlistLink();
 				administrationPOM.SendNameTosearchTextBox(UserName);
 				administrationPOM.clicksearchButton();
 				administrationPOM.clickDeleteIcon();
-				Thread.sleep(4000);
+				
 				elearningHomePOM.ElearningHDropdownClick();//from teacher login
 				elearningHomePOM.clicklogoutDBtn();
-				Thread.sleep(4000);
+				
 			   }
 		  }
 
@@ -124,7 +126,7 @@ public class TC_77ApplicationDisplayErrorMsgOnEnteringInvalidDetailsTest {
 
   @AfterClass
   public void tearDown() throws Exception {
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		driver.quit();
 	}
 
