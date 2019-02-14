@@ -30,7 +30,7 @@ import org.testng.annotations.AfterClass;
  * TC ID  : ELTC_077
  * TC Description :TO verify whether application displays error message upon entering invalid details while getting registered as Teacher
  * Pre-condition : 1. User should have launched the application
- * #Comment Everytime need to change Sheet name as TC_77 in Apache POI class
+ * 
  */
 public class TC_77ApplicationDisplayErrorMsgOnEnteringInvalidDetailsTest {
 	private static WebDriver driver;
@@ -57,7 +57,7 @@ public class TC_77ApplicationDisplayErrorMsgOnEnteringInvalidDetailsTest {
 			// open the browser 
 			driver.get(baseUrl); 
 			}
-	@Test(priority=1,dataProvider="excel-inputs",dataProviderClass=RegistrationDataProviders.class)
+	@Test(priority=1,dataProvider="excel_input_TC_77",dataProviderClass=RegistrationDataProviders.class)
 	public void EnterUserCredntialsTogetRegistered(String FirstName, String LastName,String eMail,String UserName,String Pass,String ConfirmPass, String Phone,String Language) throws InterruptedException {
 		try {
 		loginPOM.signUpLink();

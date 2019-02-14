@@ -33,7 +33,7 @@ import org.testng.annotations.AfterClass;
                    2. User should get logged in as admin
 
                    3. admin has already created course
-    #Comment Everytime need to change Sheet name as TC_80 in Apache POI class               
+                  
  */
 public class TC_80ApplicationAllowsAdminToCreateMultipleUserNregisterUsersToCourseTest {
 	private static WebDriver driver;
@@ -73,7 +73,7 @@ public class TC_80ApplicationAllowsAdminToCreateMultipleUserNregisterUsersToCour
 			//Thread.sleep(4000);
 			}
 	
-	@Test(priority=2,enabled=true,dataProvider="excel-inputs",dataProviderClass=RegistrationDataProviders.class)
+	@Test(priority=2,enabled=true,dataProvider="excel_input_TC_80",dataProviderClass=RegistrationDataProviders.class)
 	//for every sucessful run we have to change firstname,lastname and user name
 	public void clickAddNewUserOnAdministration(String FirstName, String LastName,String eMail,String Phone,String UserName,String Pass) throws InterruptedException {
 		  administrationPOM.clickAdministrationLabel();

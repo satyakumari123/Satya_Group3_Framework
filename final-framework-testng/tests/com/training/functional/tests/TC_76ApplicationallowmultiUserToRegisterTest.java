@@ -27,7 +27,7 @@ import com.training.utility.DriverNames;
  * TC ID  : ELTC_076
  * TC Description :TO verify whether application allows multiple user to get registered as Teacher
  * Pre-condition : 1. User should have launched the application
- * #Comment Everytime need to change Sheet name as TC_76 in Apache POI class
+ * 
  */
 public class TC_76ApplicationallowmultiUserToRegisterTest {
 	private static WebDriver driver;
@@ -56,7 +56,7 @@ public class TC_76ApplicationallowmultiUserToRegisterTest {
 			driver.get(baseUrl); 
 			}
 	
-	@Test(priority=1,dataProvider="excel-inputs",dataProviderClass=RegistrationDataProviders.class)
+	@Test(priority=1,dataProvider="excel_input_TC_76",dataProviderClass=RegistrationDataProviders.class)
 	public void EnterUserCredntialsTogetRegistered(String FirstName, String LastName,String eMail,String UserName,String Pass,String ConfirmPass, String Phone,String Language) throws InterruptedException {
 		//Thread.sleep(3000);
 		  loginPOM.signUpLink();

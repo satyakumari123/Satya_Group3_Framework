@@ -66,14 +66,14 @@ public class TC_78RegisteredTeacherdetailstoredInDatabaseTest {
 	  public void RegisterLinkTest(String FirstName, String LastName,String eMail,String UserName,String Pass,String ConfirmPass, String Phone,String Language) throws InterruptedException {
 		  	
 		  loginPOM.signUpLink();
-		  registrationPOM.sendregistration_firstname("xyz");
+		  registrationPOM.sendregistration_firstname("xyz");//every execution need to change value
 		  String firstname=registrationPOM.returnFirstName();
 		  registrationPOM.sendregistration_lastname("KumariS");
 		  String lastname=registrationPOM.returnLastName();
 		  registrationPOM.sendRegistration_email("satyakumari@gmail.com");
 		  String email=registrationPOM.returneMail();
 		 // registrationPOM.sendRegistration_official_code("12345");
-		  registrationPOM.senduserName("xyzxx");
+		  registrationPOM.senduserName("xyzxx"); //every execution need to change value
 		  String username=registrationPOM.returnUserName();
 		  registrationPOM.sendPassword("satyaashu5");
 		  String pass=registrationPOM.returnPass();

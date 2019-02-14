@@ -85,7 +85,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 			loginPOM.clickLoginBtn();
 			//Thread.sleep(3000);
 			jse.executeScript("window.scrollBy(0,500)");
-			createACoursePOM.ClickonCreatedCoursePage("SeleniumCourseSatya ");//click on existing course having task
+			createACoursePOM.ClickonCreatedCoursePage("SeleniumCourseSatya");//click on existing course having task
 			}
 	
 	  @Test(priority=2,enabled=true)
@@ -184,7 +184,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 		}
 	  
 	  @Test(priority=13)
-	  public void clickonAnswersofTest() throws InterruptedException {
+	  public void clickonAnswersofTest() throws InterruptedException {//Quiz answer attempt from student
 		  assessmentHomePagePOM.clickOn1stQuestionAnswer();
 		  assessmentHomePagePOM.clickNextQuestionBtn();
 		 // Thread.sleep(3000);
@@ -222,7 +222,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 			loginPOM.clickLoginBtn();
 			//Thread.sleep(3000);
 			jse.executeScript("window.scrollBy(0,500)");
-			createACoursePOM.ClickonCreatedCoursePage("SeleniumCourseSatya ");//click on existing course having task
+			createACoursePOM.ClickonCreatedCoursePage("SeleniumCourseSatya");//click on existing course having task
 			courseHomePageInsidePOM.clickTestsLink();	
 			testsHomePageInsidePOM.ClickResultAndFeedBackLink();
 			testsHomePageInsidePOM.DisplayLearnerscorePage();

@@ -36,13 +36,36 @@ public class RegistrationDataProviders {
 		return result;
 	}
 	
-	@DataProvider(name = "excel-inputs")
+	/*@DataProvider(name = "excel-inputs")
 	public Object[][] getExcelData(){
 	//String fileName ="C:/Users/Naveen/Desktop/Testing.xlsx"; ///<satya>/change path as given in ApachePOIReadexcel java class
 	//String fileName="C:\\Users\\SatyaKumari\\Desktop\\Selenium\\Project\\ComplexLevelTestCases6Febto15Feb\\TestDataSheet.xlsx";
     String fileName="C:\\Users\\SatyaKumari\\Desktop\\TestDataSheet.xlsx";		
 	System.out.println("Filename inside Dataprovider:"+fileName);
 		return new ApachePOIExcelRead().getExcelContent(fileName); 
+	}*/
+	
+	@DataProvider(name = "excel_input_TC_76")//data provider name 
+	public Object[][] getExcelDataTC76(){
+	String fileName="./resources/TestDataSheet.xlsx";
+	String sheetName="TC_76";
+	System.out.println("Filename inside Dataprovider:"+fileName);
+		return new ApachePOIExcelRead().getExcelContent(fileName,sheetName); 
+	}
+	
+	@DataProvider(name = "excel_input_TC_77")//data provider name 
+	public Object[][] getExcelDataTC77(){
+	String fileName="./resources/TestDataSheet.xlsx";
+	String sheetName="TC_77";
+	System.out.println("Filename inside Dataprovider:"+fileName);
+		return new ApachePOIExcelRead().getExcelContent(fileName,sheetName); 
+	}
+	@DataProvider(name = "excel_input_TC_80")//data provider name 
+	public Object[][] getExcelDataTC80(){
+	String fileName="./resources/TestDataSheet.xlsx";
+	String sheetName="TC_80";
+	System.out.println("Filename inside Dataprovider:"+fileName);
+		return new ApachePOIExcelRead().getExcelContent(fileName,sheetName); 
 	}
 	
 	@DataProvider(name = "xls-inputs")

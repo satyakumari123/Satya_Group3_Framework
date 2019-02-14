@@ -1,112 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="17" passed="17">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="71278" started-at="2019-02-13T11:34:26Z" finished-at="2019-02-13T11:35:37Z">
+  <suite name="Default suite" duration-ms="101153" started-at="2019-02-14T07:19:59Z" finished-at="2019-02-14T07:21:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="71278" started-at="2019-02-13T11:34:26Z" finished-at="2019-02-13T11:35:37Z">
-      <class name="com.training.functional.tests.TC_78RegisteredTeacherdetailstoredInDatabaseTest">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.TC_78RegisteredTeacherdetailstoredInDatabaseTest@47c62251]" name="setUpBeforeClass" is-config="true" duration-ms="38" started-at="2019-02-13T11:34:26Z" finished-at="2019-02-13T11:34:26Z">
+    <test name="Default test" duration-ms="101153" started-at="2019-02-14T07:19:59Z" finished-at="2019-02-14T07:21:40Z">
+      <class name="com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="setUpBeforeClass" is-config="true" duration-ms="27" started-at="2019-02-14T07:19:59Z" finished-at="2019-02-14T07:19:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="BrowserLaunchTest()[pri:0, instance:com.training.functional.tests.TC_78RegisteredTeacherdetailstoredInDatabaseTest@47c62251]" name="BrowserLaunchTest" duration-ms="59889" started-at="2019-02-13T11:34:26Z" finished-at="2019-02-13T11:35:26Z">
+        <test-method status="PASS" signature="BrowserLaunchTest()[pri:0, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="BrowserLaunchTest" duration-ms="36788" started-at="2019-02-14T07:19:59Z" finished-at="2019-02-14T07:20:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserLaunchTest -->
-        <test-method status="FAIL" signature="RegisterLinkTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.training.functional.tests.TC_78RegisteredTeacherdetailstoredInDatabaseTest@47c62251]" name="RegisterLinkTest" duration-ms="9299" started-at="2019-02-13T11:35:27Z" data-provider="db-inputs" finished-at="2019-02-13T11:35:36Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[satya]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[kumari]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[satyaashu@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[satyaU]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[123456]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[123456]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[7722032874]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[English]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [satya] but found [xyz]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [satya] but found [xyz]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:453)
-at org.testng.Assert.assertEquals(Assert.java:463)
-at com.training.functional.tests.TC_78RegisteredTeacherdetailstoredInDatabaseTest.RegisterLinkTest(TC_78RegisteredTeacherdetailstoredInDatabaseTest.java:93)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="validTeacherLoginTest()[pri:1, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="validTeacherLoginTest" duration-ms="7129" started-at="2019-02-14T07:20:36Z" finished-at="2019-02-14T07:20:43Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RegisterLinkTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.TC_78RegisteredTeacherdetailstoredInDatabaseTest@47c62251]" name="tearDown" is-config="true" duration-ms="1014" started-at="2019-02-13T11:35:36Z" finished-at="2019-02-13T11:35:37Z">
+        </test-method> <!-- validTeacherLoginTest -->
+        <test-method status="PASS" signature="clickOnAssessmentLink()[pri:2, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="clickOnAssessmentLink" duration-ms="1770" started-at="2019-02-14T07:20:43Z" finished-at="2019-02-14T07:20:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnAssessmentLink -->
+        <test-method status="PASS" signature="AssessmentHomePage()[pri:3, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="AssessmentHomePage" duration-ms="1474" started-at="2019-02-14T07:20:45Z" finished-at="2019-02-14T07:20:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssessmentHomePage -->
+        <test-method status="PASS" signature="ChooseTypeOfActivityToAccess()[pri:4, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="ChooseTypeOfActivityToAccess" duration-ms="1609" started-at="2019-02-14T07:20:47Z" finished-at="2019-02-14T07:20:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChooseTypeOfActivityToAccess -->
+        <test-method status="PASS" signature="ChooseActivityToAccess()[pri:5, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="ChooseActivityToAccess" duration-ms="2701" started-at="2019-02-14T07:20:48Z" finished-at="2019-02-14T07:20:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChooseActivityToAccess -->
+        <test-method status="PASS" signature="clickOnEditIconofCreatedAssessment()[pri:6, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="clickOnEditIconofCreatedAssessment" duration-ms="2542" started-at="2019-02-14T07:20:51Z" finished-at="2019-02-14T07:20:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnEditIconofCreatedAssessment -->
+        <test-method status="PASS" signature="clickOnAttachedCertificateIcon()[pri:7, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="clickOnAttachedCertificateIcon" duration-ms="2031" started-at="2019-02-14T07:20:53Z" finished-at="2019-02-14T07:20:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnAttachedCertificateIcon -->
+        <test-method status="PASS" signature="SignOutFromTeacherTest()[pri:8, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="SignOutFromTeacherTest" duration-ms="1340" started-at="2019-02-14T07:20:55Z" finished-at="2019-02-14T07:20:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SignOutFromTeacherTest -->
+        <test-method status="PASS" signature="StudentLogin()[pri:9, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="StudentLogin" duration-ms="1764" started-at="2019-02-14T07:20:57Z" finished-at="2019-02-14T07:20:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StudentLogin -->
+        <test-method status="PASS" signature="clickCourseCatalogLink()[pri:10, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="clickCourseCatalogLink" duration-ms="1116" started-at="2019-02-14T07:20:59Z" finished-at="2019-02-14T07:21:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickCourseCatalogLink -->
+        <test-method status="PASS" signature="clickSearchCourseitemaftersubscribe()[pri:11, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="clickSearchCourseitemaftersubscribe" duration-ms="2500" started-at="2019-02-14T07:21:00Z" finished-at="2019-02-14T07:21:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickSearchCourseitemaftersubscribe -->
+        <test-method status="PASS" signature="clickOnStudentAssessmentLink()[pri:12, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="clickOnStudentAssessmentLink" duration-ms="7235" started-at="2019-02-14T07:21:02Z" finished-at="2019-02-14T07:21:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnStudentAssessmentLink -->
+        <test-method status="PASS" signature="clickonAnswersofTest()[pri:13, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="clickonAnswersofTest" duration-ms="16404" started-at="2019-02-14T07:21:09Z" finished-at="2019-02-14T07:21:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickonAnswersofTest -->
+        <test-method status="PASS" signature="DisplayStudentTestResult()[pri:14, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="DisplayStudentTestResult" duration-ms="109" started-at="2019-02-14T07:21:26Z" finished-at="2019-02-14T07:21:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DisplayStudentTestResult -->
+        <test-method status="PASS" signature="SignOutFromStudentTest()[pri:15, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="SignOutFromStudentTest" duration-ms="3282" started-at="2019-02-14T07:21:26Z" finished-at="2019-02-14T07:21:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SignOutFromStudentTest -->
+        <test-method status="PASS" signature="CheckTeacherLoginTest()[pri:16, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="CheckTeacherLoginTest" duration-ms="10448" started-at="2019-02-14T07:21:29Z" finished-at="2019-02-14T07:21:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckTeacherLoginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest@47c62251]" name="tearDown" is-config="true" duration-ms="824" started-at="2019-02-14T07:21:40Z" finished-at="2019-02-14T07:21:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.functional.tests.TC_78RegisteredTeacherdetailstoredInDatabaseTest -->
+      </class> <!-- com.training.functional.tests.TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsRegisterCourseCompleteAssignmentsTeacherReviewSendMailTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
