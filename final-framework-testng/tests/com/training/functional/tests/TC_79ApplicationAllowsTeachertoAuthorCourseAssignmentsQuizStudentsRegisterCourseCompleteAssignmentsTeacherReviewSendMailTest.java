@@ -83,7 +83,6 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 			loginPOM.sendUserName("satyaTec6");//login with teacher
 			loginPOM.sendPassword("satyaashu5");
 			loginPOM.clickLoginBtn();
-			//Thread.sleep(3000);
 			jse.executeScript("window.scrollBy(0,500)");
 			createACoursePOM.ClickonCreatedCoursePage("SeleniumCourseSatya");//click on existing course having task
 			}
@@ -110,7 +109,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	@Test(priority=4,enabled=true)
 	public void ChooseTypeOfActivityToAccess() throws InterruptedException {
 	    assessmentHomePagePOM.ChooseTypeOfActivityToAccess();
-		//Thread.sleep(3000);
+		
 		assessmentHomePagePOM.DisplayTestsInChooseActivity();
 		Actual=assessmentHomePagePOM.DisplayTestsInChooseActivity();
 		Expected="Tests";
@@ -130,11 +129,9 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	@Test(priority=6)
 	public void clickOnEditIconofCreatedAssessment() throws InterruptedException {
 		assessmentHomePagePOM.clickoneditIconofCreatedAssessment();
-		//parent::tbody//img[@title='Edit']
-		//Thread.sleep(3000);
 		assessmentHomePagePOM.clickOnEditButton();
 	}
-	@Test(priority=7)
+	@Test(priority=7)//click on Attached certificate icon
 	public void clickOnAttachedCertificateIcon()
 	{
 		assessmentHomePagePOM.clickOnAttachCertificateIcon();
@@ -147,15 +144,14 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	 public void SignOutFromTeacherTest() throws InterruptedException {//click on right icon for veiw list,inbox,elearning,logout
 		  elearningHomePOM.ElearningHDropdownClick();//from teacher login
 		 
-		  //Thread.sleep(3000);
 		  elearningHomePOM.clicklogoutDBtn();
 		  }
 	@Test(priority=9,enabled=true)
 	public void StudentLogin() throws InterruptedException {
-		loginPOM.sendUserName("satyaStu5");//login with teacher
+		loginPOM.sendUserName("satyaStu5");//login with Student
 		loginPOM.sendPassword("satyaashu5");
 		loginPOM.clickLoginBtn();
-		//Thread.sleep(3000);
+		
 		}
 	@Test(priority=10)//click on Course catalog Step 1 
 	  public void clickCourseCatalogLink() throws InterruptedException {
@@ -178,7 +174,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	  public void clickOnStudentAssessmentLink() throws InterruptedException {//Click on assessment link
 		  jse.executeScript("window.scrollBy(0,500)");
 		courseHomePageInsidePOM.clickAssessmentLink();//click on assessment link inside course
-		//Thread.sleep(2000);
+		
 		assessmentHomePagePOM.clickOnlineSeleniumTestsLink(); //click on created test link inside Assessment homepage
 		assessmentHomePagePOM.clickOnStartTestsBtn();
 		}
@@ -187,17 +183,17 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 	  public void clickonAnswersofTest() throws InterruptedException {//Quiz answer attempt from student
 		  assessmentHomePagePOM.clickOn1stQuestionAnswer();
 		  assessmentHomePagePOM.clickNextQuestionBtn();
-		 // Thread.sleep(3000);
+		 
 		  assessmentHomePagePOM.clickOn2ndQuestionAnswer();
 		  assessmentHomePagePOM.clickNextQuestionBtn();
-		  //Thread.sleep(3000);
+		  
 		  assessmentHomePagePOM.clickOn3rdQuestionAnswer();
 		  assessmentHomePagePOM.clickNextQuestionBtn();
-		 // Thread.sleep(3000);
+		
 	  }
 	  
 	  @Test(priority=14)
-	  public void DisplayStudentTestResult() {
+	  public void DisplayStudentTestResult() {//Test result of student
 		  Actual=assessmentHomePagePOM.DisplayTestResultHeader();
 		  System.out.println("Actual Page"+Actual);
 		  Expected="OnlineSeleniumTests : Result";
@@ -215,7 +211,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 			 // Thread.sleep(3000);
 			  elearningHomePOM.clicklogoutDBtn();
 			  }
-	  @Test(priority=16)//Login with Student
+	  @Test(priority=16)//Login with Teacher and check student score 
 	  public void CheckTeacherLoginTest() throws InterruptedException {
 		    loginPOM.sendUserName("satyaTec6");//login with teacher
 			loginPOM.sendPassword("satyaashu5");
@@ -231,9 +227,7 @@ public class TC_79ApplicationAllowsTeachertoAuthorCourseAssignmentsQuizStudentsR
 			assertEquals(Actual,Expected);
 	  }
 	  
-	  
-	  
-  @BeforeClass
+ @BeforeClass
   public static void setUpBeforeClass() throws IOException {
 	properties = new Properties();
 	FileInputStream inStream = new FileInputStream("./resources/others.properties");

@@ -60,8 +60,9 @@ public class TC_77ApplicationDisplayErrorMsgOnEnteringInvalidDetailsTest {
 	@Test(priority=1,dataProvider="excel_input_TC_77",dataProviderClass=RegistrationDataProviders.class)
 	public void EnterUserCredntialsTogetRegistered(String FirstName, String LastName,String eMail,String UserName,String Pass,String ConfirmPass, String Phone,String Language) throws InterruptedException {
 		try {
+			//For performing registration of user
 		loginPOM.signUpLink();
-		//Thread.sleep(3000);
+		
 		  registrationPOM.sendregistration_firstname(FirstName);
 		  registrationPOM.sendregistration_lastname(LastName);
 		  registrationPOM.sendRegistration_email(eMail);
@@ -73,7 +74,7 @@ public class TC_77ApplicationDisplayErrorMsgOnEnteringInvalidDetailsTest {
 		  registrationPOM.selectLanguage(Language);
 		  registrationPOM.clickTeacherRBtn();//able to select teacher radio button
 		  	screenShot.captureScreenShot("RegistrationTest");
-		  registrationPOM.clickregistration_submitBtn();
+		  registrationPOM.clickregistration_submitBtn();//click on submit button for registration
 		 
 		  Actual=registrationPOM.DisplayRegistrationErrorMsg();
 		 // if (Actual!=null) {
@@ -84,7 +85,7 @@ public class TC_77ApplicationDisplayErrorMsgOnEnteringInvalidDetailsTest {
 			  System.out.println("Registration Done successfully: This is Defect: As accepted wrong data");
 			    elearningHomePOM.ElearningHDropdownClick();//from teacher login
 				elearningHomePOM.clicklogoutDBtn();
-				
+				//Below Code is for deleting added user from the application
 				loginPOM.sendUserName("admin");
 				loginPOM.sendPassword("admin@123");
 				loginPOM.clickLoginBtn();
@@ -95,7 +96,7 @@ public class TC_77ApplicationDisplayErrorMsgOnEnteringInvalidDetailsTest {
 				administrationPOM.clicksearchButton();
 				administrationPOM.clickDeleteIcon();
 				
-				elearningHomePOM.ElearningHDropdownClick();//from teacher login
+				elearningHomePOM.ElearningHDropdownClick();//from admin logout
 				elearningHomePOM.clicklogoutDBtn();
 				
 			   }

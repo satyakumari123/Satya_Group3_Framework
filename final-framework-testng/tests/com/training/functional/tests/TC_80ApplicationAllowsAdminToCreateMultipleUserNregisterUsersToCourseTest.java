@@ -70,7 +70,7 @@ public class TC_80ApplicationAllowsAdminToCreateMultipleUserNregisterUsersToCour
 			loginPOM.sendUserName("admin");
 			loginPOM.sendPassword("admin@123");
 			loginPOM.clickLoginBtn(); 
-			//Thread.sleep(4000);
+			
 			}
 	
 	@Test(priority=2,enabled=true,dataProvider="excel_input_TC_80",dataProviderClass=RegistrationDataProviders.class)
@@ -95,10 +95,10 @@ public class TC_80ApplicationAllowsAdminToCreateMultipleUserNregisterUsersToCour
 		//Thread.sleep(2000);
 		addaUserPOM.ViewInfoAfterSubLabel();
 		String Actual= addaUserPOM.ViewInfoAfterSubLabel();
-		//String Expected="The user has been added: efgg1 hijg";
 		String Expected="The user has been added: ";
 		boolean namevalue=Actual.contains(Expected);
 		assertTrue(namevalue);
+		//Below Code is for deleting added user from the application
 		administrationPOM.SendNameTosearchTextBox(UserName);
 		administrationPOM.clicksearchButton();
 		administrationPOM.clickDeleteIcon();
@@ -107,7 +107,7 @@ public class TC_80ApplicationAllowsAdminToCreateMultipleUserNregisterUsersToCour
 	 @Test(priority=3,enabled=true)//click on administration link //enabled true done
 	  public void ClickAdministrationLink() throws InterruptedException {
 		addCategoryPOM.AdministrationLinkClick();
-		//Thread.sleep(2000);
+		
  }
 	  
 	  @Test(priority=4,enabled=true)//click on AddUsers to course link
@@ -125,9 +125,11 @@ public class TC_80ApplicationAllowsAdminToCreateMultipleUserNregisterUsersToCour
 	  }
 	  //Select Users from User list to subscribe with course
 	  
-    @Test(priority=6,enabled=true)//select user from user list and checked highlighted colour for selected item
-   public void SelectuserfromUserListForAddtoCourse() throws InterruptedException {
-    	addUsersToCoursePOM.selectuserfromUserList("kumariStu satyaStu1 (satyaStu1)");  
+    @Test(priority=6,enabled=true)
+     public void SelectuserfromUserListForAddtoCourse() throws InterruptedException {
+    	//select user from user list and checked highlighted colour for selected item
+    	addUsersToCoursePOM.selectuserfromUserList("kumariStu satyaStu1 (satyaStu1)"); 
+    	
     	//Hard coded name as there is issue in application so we are not able to select exact name as there are redundent data
   	  addUsersToCoursePOM.testUserListbackgroundcolor();//used coding for highlight background
   	  System.out.println("Highlighted Username :"+addUsersToCoursePOM.testUserListbackgroundcolor());

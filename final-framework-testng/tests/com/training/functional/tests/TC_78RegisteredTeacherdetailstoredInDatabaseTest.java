@@ -64,7 +64,7 @@ public class TC_78RegisteredTeacherdetailstoredInDatabaseTest {
 			}
 	@Test (priority =1,dataProvider = "db-inputs", dataProviderClass = RegistrationDataProviders.class)
 	  public void RegisterLinkTest(String FirstName, String LastName,String eMail,String UserName,String Pass,String ConfirmPass, String Phone,String Language) throws InterruptedException {
-		  	
+		  //Enter user from application and compare from database	
 		  loginPOM.signUpLink();
 		  registrationPOM.sendregistration_firstname("xyz");//every execution need to change value
 		  String firstname=registrationPOM.returnFirstName();

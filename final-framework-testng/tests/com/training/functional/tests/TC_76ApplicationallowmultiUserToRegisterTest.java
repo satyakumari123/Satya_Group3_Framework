@@ -58,9 +58,9 @@ public class TC_76ApplicationallowmultiUserToRegisterTest {
 	
 	@Test(priority=1,dataProvider="excel_input_TC_76",dataProviderClass=RegistrationDataProviders.class)
 	public void EnterUserCredntialsTogetRegistered(String FirstName, String LastName,String eMail,String UserName,String Pass,String ConfirmPass, String Phone,String Language) throws InterruptedException {
-		//Thread.sleep(3000);
+		
 		  loginPOM.signUpLink();
-		//Thread.sleep(3000);
+		
 		  registrationPOM.sendregistration_firstname(FirstName);
 		  registrationPOM.sendregistration_lastname(LastName);
 		  registrationPOM.sendRegistration_email(eMail);
@@ -70,11 +70,11 @@ public class TC_76ApplicationallowmultiUserToRegisterTest {
 		  registrationPOM.sendconfirmPassword(ConfirmPass);
 		  registrationPOM.sendregistration_phone(Phone);
 		  registrationPOM.selectLanguage(Language);
-		 // Thread.sleep(3000);
+		 
 		  registrationPOM.clickTeacherRBtn();//able to select teacher radio button
 		 
 		  screenShot.captureScreenShot("RegistrationTest");
-		  registrationPOM.clickregistration_submitBtn();
+		  registrationPOM.clickregistration_submitBtn();//click on submit button for registration
 		  
 				//Check assertion for displayed message after registration				
 			Actual1=registrationPOM.DisplayRegistrationUsersuccessfulSentMsghalf();
@@ -84,30 +84,30 @@ public class TC_76ApplicationallowmultiUserToRegisterTest {
 					"Your personal settings have been registered.";
 			System.out.println("Expected1 "+Expected1);
 			boolean value1=Actual1.contains(Expected1);
-			assertTrue(value1);
+			assertTrue(value1);//For checking message for user after regitartion
 			Actual=registrationPOM.DisplayRegistrationMailsentMsgHalf();
 			System.out.println("Actual "+Actual);
 			Expected="An email has been sent to help you remember your login and password.";
 			System.out.println("Expected "+Expected);
-			boolean value=Actual.contains(Expected);
+			boolean value=Actual.contains(Expected);//Message for sending email after registration
 			assertTrue(value);
 			
-			elearningHomePOM.ElearningHDropdownClick();//from teacher login
-			elearningHomePOM.clicklogoutDBtn();
-			//Thread.sleep(3000);
+			elearningHomePOM.ElearningHDropdownClick();
+			elearningHomePOM.clicklogoutDBtn();//from teacher logout
+			//Below Code is for deleting added user from the application
 			loginPOM.sendUserName("admin");
 			loginPOM.sendPassword("admin@123");
 			loginPOM.clickLoginBtn();
 			administrationPOM.clickAdministrationLabel();
-			//Thread.sleep(3000);
+	
 			administrationPOM.clickuserlistLink();
 			administrationPOM.SendNameTosearchTextBox(UserName);
 			administrationPOM.clicksearchButton();
 			administrationPOM.clickDeleteIcon();
-			//Thread.sleep(4000);
-			elearningHomePOM.ElearningHDropdownClick();//from teacher login
+			
+			elearningHomePOM.ElearningHDropdownClick();//from admin logout
 			elearningHomePOM.clicklogoutDBtn();
-			//Thread.sleep(4000);
+			
 			
 	}
   
